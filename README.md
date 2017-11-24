@@ -1,2 +1,5 @@
-# iftt-bitcoin
-IFTT, spread sheet bitcoint updater
+# Crypto currencies updater
+
+# Build
+
+make
