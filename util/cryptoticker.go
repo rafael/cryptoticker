@@ -1,4 +1,4 @@
-package cryptoticker
+package util
 
 import (
 	"encoding/json"

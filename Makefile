@@ -8,7 +8,7 @@ REPOPATH = github.com/rafael/cryptoticker
 
 VERBOSE_1 := -v
 VERBOSE_2 := -v -x
-WHAT :=  googlecreds ticketupdater
+WHAT :=  googlecreds
 
 build: vendor
 	for target in $(WHAT); do \

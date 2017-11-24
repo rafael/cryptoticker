@@ -8,7 +8,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/rafael/cryptoticker"
+	"github.com/rafael/cryptoticker/util"
 	"golang.org/x/net/context"
 	"golang.org/x/oauth2"
 	"google.golang.org/api/sheets/v4"
@@ -31,7 +31,7 @@ type CoinTicker struct {
 }
 
 func main() {
-	config := cryptoticker.GetConfig()
+	config := util.GetConfig()
 	tickers, err := getTicker()
 	if err != nil {
 		log.Fatal(err)
@@ -45,7 +45,7 @@ func main() {
 			targetCoins[ticker.Id] = ticker
 		}
 	}
-	oauthToken, err := cryptoticker.ParseOauthToken()
+	oauthToken, err := util.ParseOauthToken()
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -84,7 +84,7 @@ func getTicker() (tickers []CoinTicker, err error) {
 
 func updateGoogleSheet(oauthToken *oauth2.Token, tickers map[string]CoinTicker) {
 	ctx := context.Background()
-	config, err := cryptoticker.GetOauth2Config()
+	config, err := util.GetOauth2Config()
 	if err != nil {
 		log.Fatalf("Unable to get oauth config %v", err)
 	}
@@ -94,7 +94,7 @@ func updateGoogleSheet(oauthToken *oauth2.Token, tickers map[string]CoinTicker) 
 		log.Fatalf("Unable to retrieve Sheets Client %v", err)
 	}
 
-	spreadsheetId := cryptoticker.GetConfig().SpreadSheetId
+	spreadsheetId := util.GetConfig().SpreadSheetId
 	writeRange := "coin_overview!A1"
 
 	var vr sheets.ValueRange

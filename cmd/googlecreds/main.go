@@ -6,7 +6,7 @@ import (
 	"log"
 
 	b64 "encoding/base64"
-	"github.com/rafael/cryptoticker"
+	"github.com/rafael/cryptoticker/util"
 	"golang.org/x/oauth2"
 )
 
@@ -38,7 +38,7 @@ func printToken(token *oauth2.Token) {
 }
 
 func main() {
-	config, err := cryptoticker.GetOauth2Config()
+	config, err := util.GetOauth2Config()
 	if err != nil {
 		log.Fatalf("Unable to cache oauth token: %v", err)
 	}
