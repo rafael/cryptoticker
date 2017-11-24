@@ -8,7 +8,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/cryptoticker"
+	"github.com/rafael/cryptoticker"
 	"golang.org/x/net/context"
 	"golang.org/x/oauth2"
 	"google.golang.org/api/sheets/v4"

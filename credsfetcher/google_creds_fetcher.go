@@ -6,7 +6,7 @@ import (
 	"log"
 
 	b64 "encoding/base64"
-	"github.com/cryptoticker"
+	"github.com/rafael/cryptoticker"
 	"golang.org/x/oauth2"
 )
 
