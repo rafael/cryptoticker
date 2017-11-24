@@ -1,5 +1,5 @@
 ifeq ($(origin VERSION), undefined)
-	VERSION != git rev-parse --short HEAD
+	VERSION != 1
 endif
 
 HOST_GOOS=$(shell go env GOOS)
